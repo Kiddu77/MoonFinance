@@ -5,7 +5,7 @@ import { getAnalytics } from "firebase/analytics";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// For Firebase JS SDK v7.20.00 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyDLgYP7XoHUC7Bs5psQSa86CyoKORryQJw",
   authDomain: "moonfinance-nayan.firebaseapp.com",
