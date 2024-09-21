@@ -1,10 +1,18 @@
 import React from 'react';
+import Image from 'next/image';
 
 const Header = () => {
   return (
      <header className="flex justify-between items-center p-4">
      <div className="flex items-center">
-       <img src="https://res.cloudinary.com/dhrvr4sey/image/upload/v1726864546/Logo_cla0fe.png" alt="Moon Finance Logo" className="h-6 w-6 mr-2" />
+     <Image 
+  src="https://res.cloudinary.com/dhrvr4sey/image/upload/v1726864546/Logo_cla0fe.png" 
+  alt="Moon Finance Logo" 
+  className="h-6 w-6 mr-2" 
+  width={24} 
+  height={24} 
+/>
+
        <span className="font-bold text-black">MOON FINANCE</span>
      </div>
      <nav>

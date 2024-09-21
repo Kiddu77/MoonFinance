@@ -1,5 +1,6 @@
 import Header from '@/app/components/Header';
 import React from 'react';
+import Image from 'next/image';
 
 const LoginPage = () => {
   return (
@@ -36,26 +37,46 @@ const LoginPage = () => {
           <p className="text-center mb-4 text-black">Continue with</p>
           <div className="flex justify-center space-x-4 mb-8">
             <button className="p-2 border rounded-full">
-              <img src="https://res.cloudinary.com/dhrvr4sey/image/upload/v1726862669/google_oag3xu.png" alt="Google" className="w-6 h-6" />
+            <Image 
+              src="https://res.cloudinary.com/dhrvr4sey/image/upload/v1726862669/google_oag3xu.png" 
+              alt="Google" 
+              className="w-6 h-6" 
+              width={24} 
+              height={24} 
+            />
             </button>
             <button className="p-2 border rounded-full">
-              <img src="https://res.cloudinary.com/dhrvr4sey/image/upload/v1726862670/apple_zmjup3.png" alt="Apple" className="w-6 h-6" />
+            <Image 
+              src="https://res.cloudinary.com/dhrvr4sey/image/upload/v1726862670/apple_zmjup3.png" 
+              alt="Apple" 
+              className="w-6 h-6" 
+              width={24} 
+              height={24} 
+            />
             </button>
             <button className="p-2 border rounded-full">
-              <img src="https://res.cloudinary.com/dhrvr4sey/image/upload/v1726862669/mail_ryfif4.png" alt="Mail" className="w-6 h-6" />
+            <Image 
+              src="https://res.cloudinary.com/dhrvr4sey/image/upload/v1726862669/mail_ryfif4.png" 
+              alt="Mail" 
+              className="w-6 h-6" 
+              width={24} 
+              height={24} 
+            />
             </button>
           </div>
           <p className="text-center text-black">
-            Don't you have an account? <a href="#" style={{ color: '#12C38C' }}>Sign up</a>
+            Don&#39;t you have an account? <a href="#" style={{ color: '#12C38C' }}>Sign up</a>
           </p>
         </div>
         <div className="w-full md:w-1/2 bg-[#12C38C] flex items-center justify-center p-8">
           <div className="w-full max-w-xl">
-            <img
-              src="https://res.cloudinary.com/dhrvr4sey/image/upload/v1726865117/login_kjpjnz.png"
-              alt="Business growth illustration"
-              className="w-full h-auto object-contain"
-            />
+          <Image 
+            src="https://res.cloudinary.com/dhrvr4sey/image/upload/v1726865117/login_kjpjnz.png" 
+            alt="Business growth illustration" 
+            className="w-full h-auto object-contain" 
+            width={1024} // replace with the actual width of the image
+            height={512} // replace with the actual height of the image
+          />
           </div>
         </div>
       </main>

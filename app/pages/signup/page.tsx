@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../../components/Header';
+import Image from 'next/image';
 
 const SignUpPage = () => {
   return (
@@ -8,11 +9,13 @@ const SignUpPage = () => {
       <div className="flex flex-col md:flex-row h-screen">
         <div className="w-full md:w-1/2 h-full">
           <div className="w-full h-full">
-            <img 
-              src="https://res.cloudinary.com/dhrvr4sey/image/upload/v1726863366/signup_d575io.png" 
-              alt="Sign up illustration" 
-              className="w-full h-full object-cover"
-            />
+          <Image 
+            src="https://res.cloudinary.com/dhrvr4sey/image/upload/v1726863366/signup_d575io.png" 
+            alt="Sign up illustration" 
+            className="w-full h-full object-cover" 
+            width={1024} // replace with the actual width of the image
+            height={768} // replace with the actual height of the image
+          />
           </div>
         </div>
 
@@ -43,7 +46,13 @@ const SignUpPage = () => {
             </form>
             <div className="mt-6 flex items-center justify-between">
               <button className="flex items-center text-gray-700">
-                <img src="https://res.cloudinary.com/dhrvr4sey/image/upload/v1726862669/google_oag3xu.png" alt="Google logo" className="mr-2 w-5 h-5" />
+              <Image 
+                src="https://res.cloudinary.com/dhrvr4sey/image/upload/v1726862669/google_oag3xu.png" 
+                alt="Google logo" 
+                className="mr-2" 
+                width={20} // replace 20 with the actual width in pixels
+                height={20} // replace 20 with the actual height in pixels
+              />
                 Sign up with Google
               </button>
               <button className="flex items-center text-gray-700">
