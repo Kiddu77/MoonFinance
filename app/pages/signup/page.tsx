@@ -2,24 +2,22 @@ import React from 'react';
 import Header from '../../components/Header';
 import Image from 'next/image';
 
-const SignUpPage = () => {
+const SignUpPage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Header />
       <div className="flex flex-col md:flex-row h-screen">
         <div className="w-full md:w-1/2 h-full">
-          <div className="w-full h-full">
-          <Image 
-            src="https://res.cloudinary.com/dhrvr4sey/image/upload/v1726863366/signup_d575io.png" 
-            alt="Sign up illustration" 
-            className="w-full h-full object-cover" 
-            width={1024} // replace with the actual width of the image
-            height={768} // replace with the actual height of the image
-          />
+          <div className="w-full h-full relative">
+            <Image
+              src="https://res.cloudinary.com/dhrvr4sey/image/upload/v1726863366/signup_d575io.png"
+              alt="Sign up illustration"
+              layout="fill"
+              objectFit="cover"
+            />
           </div>
         </div>
-
-        {/* Right side with the sign-up form */}
+        
         <div className="w-full md:w-1/2 flex items-center justify-center p-8 bg-white">
           <div className="w-full max-w-md">
             <h1 className="text-5xl font-bold mb-8" style={{ color: '#12C38C' }}>Sign up</h1>
@@ -46,14 +44,13 @@ const SignUpPage = () => {
             </form>
             <div className="mt-6 flex items-center justify-between">
               <button className="flex items-center text-gray-700">
-              <Image 
-                src="https://res.cloudinary.com/dhrvr4sey/image/upload/v1726862669/google_oag3xu.png" 
-                alt="Google logo" 
-                className="mr-2" 
-                width={20} // replace 20 with the actual width in pixels
-                height={20} // replace 20 with the actual height in pixels
-              />
-                Sign up with Google
+                <Image
+                  src="https://res.cloudinary.com/dhrvr4sey/image/upload/v1726862669/google_oag3xu.png"
+                  alt="Google logo"
+                  width={20}
+                  height={20}
+                />
+                <span className="ml-2">Sign up with Google</span>
               </button>
               <button className="flex items-center text-gray-700">
                 <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
