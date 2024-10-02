@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import Image from 'next/image';
+
 
 const GetInTouch: React.FC = () => {
   const [formData, setFormData] = useState({

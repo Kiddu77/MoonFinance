@@ -1,29 +1,28 @@
 // app/page.tsx
+"use client"; // Mark this file as a client component
 
-import React from 'react';
-import LoginPage from './pages/login/page'; // Correctly import the Login page component
-import Home from './pages/Home/Home';
-import Footer from './pages/Home/Footer';
-import GetInTouch from './pages/Home/GetInTouch';
-import Faq from './pages/Home/Faq';
+import React, { useEffect, useState } from 'react';
+import Home from './pages/Home/page';
+import LoginPage from './pages/login/page';
+import SignUpPage from './pages/signup/page';
 
-interface HomePageProps {
-  title: string;
-  description: string;
-}
+const App = () => {
+  const [route, setRoute] = useState('');
 
-// Fetching data in the component
-const HomePage = async () => {
-  // Simulate data fetching (could be from an API, database, etc.)
-  const data: HomePageProps = {
-    title: 'Welcome to Moon Finance!',
-    description: 'This is a basic Next.js page using the new app directory.',
-  };
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setRoute(window.location.pathname); // Access window safely after client-side rendering
+    }
+  }, []);
 
-  return (
-    <><Home /><Faq /><GetInTouch /><Footer /></>
-  );
+  switch (route) {
+    case '/login':
+      return <LoginPage />;
+    case '/signup':
+      return <SignUpPage />;
+    default:
+      return <Home />;
+  }
 };
 
-export default HomePage;
-
+export default App;

@@ -3,6 +3,7 @@ import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import Header from "@/app/components/Header";
+// import screenshot from "@public/screenshot.png"
 
 const Home: React.FC = () => {
   const router = useRouter();
@@ -40,13 +41,13 @@ const Home: React.FC = () => {
         </div>
         <div className="lg:w-1/2 flex justify-center lg:justify-end">
           <div className="relative w-full max-w-md">
-            <Image
-              className="ml-20" // Tailwind CSS for margin-left
-              src="https://res.cloudinary.com/dxmb2qmqv/image/upload/v1727345749/oyrurdm3mbnwd1mtz6le.svg"
-              alt="Moon Finance App Screenshots"
-              width={1000}
-              height={800}
-              layout="responsive"
+          <Image
+                className="ml-20"
+                src="/assets/screenshot.png" // Updated path
+                alt="Moon Finance App Screenshots"
+                width={1000}
+                height={800}
+                layout="responsive"
             />
           </div>
         </div>
