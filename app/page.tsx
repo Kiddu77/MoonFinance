@@ -1,4 +1,3 @@
-import Image from "next/image";
 import About from "@/app/components/About";
 
 export default function Home() {
