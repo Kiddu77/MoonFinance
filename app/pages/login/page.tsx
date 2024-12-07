@@ -2,7 +2,7 @@ import Header from '@/app/components/Header';
 import React from 'react';
 import Image from 'next/image';
 
-const LoginPage = () => {
+const LoginPage: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Header />
@@ -27,10 +27,16 @@ const LoginPage = () => {
                 required
               />
             </div>
-            <button
-              type="submit" // Ensured button is of type submit
-              className="w-full bg-[#12C38C] text-white font-bold py-3 rounded-full transition duration-300 hover:bg-[#0f9d77]"
-            >
+
+            <button 
+              className="w-full" 
+              style={{ 
+                backgroundColor: '#12C38C', 
+                color: 'white', 
+                padding: '12px', 
+                borderRadius: '8px', 
+                transition: 'background-color 0.3s ease' 
+              }}
               LOGIN
             </button>
           </form>
@@ -47,46 +53,28 @@ const LoginPage = () => {
 
           <p className="text-center mb-4 text-black">Continue with</p>
           <div className="flex justify-center space-x-4 mb-8">
-            {/* Google Login Button */}
-            <button
-              type="button"
-              className="p-2 border rounded-full"
-              aria-label="Login with Google"
-            >
-              <Image 
+
+            <button className="p-2 border rounded-full">
+              <Image
                 src="https://res.cloudinary.com/dhrvr4sey/image/upload/v1726862669/google_oag3xu.png"
-                alt="Login with Google"
-                className="w-6 h-6"
+                alt="Google"
                 width={24}
                 height={24}
               />
             </button>
 
-            {/* Apple Login Button */}
-            <button
-              type="button"
-              className="p-2 border rounded-full"
-              aria-label="Login with Apple"
-            >
-              <Image 
+            <button className="p-2 border rounded-full">
+              <Image
                 src="https://res.cloudinary.com/dhrvr4sey/image/upload/v1726862670/apple_zmjup3.png"
-                alt="Login with Apple"
-                className="w-6 h-6"
+                alt="Apple"
                 width={24}
                 height={24}
               />
             </button>
-
-            {/* Email Login Button */}
-            <button
-              type="button"
-              className="p-2 border rounded-full"
-              aria-label="Login with Email"
-            >
-              <Image 
+            <button className="p-2 border rounded-full">
+              <Image
                 src="https://res.cloudinary.com/dhrvr4sey/image/upload/v1726862669/mail_ryfif4.png"
-                alt="Login with Email"
-                className="w-6 h-6"
+                alt="Mail"
                 width={24}
                 height={24}
               />
@@ -100,12 +88,12 @@ const LoginPage = () => {
 
         <div className="w-full md:w-1/2 bg-[#12C38C] flex items-center justify-center p-8">
           <div className="w-full max-w-xl">
-            <Image 
+            <Image
               src="https://res.cloudinary.com/dhrvr4sey/image/upload/v1726865117/login_kjpjnz.png"
               alt="Business growth illustration"
-              className="w-full h-auto object-contain"
               width={1024}
               height={512}
+              layout="responsive"
             />
           </div>
         </div>
