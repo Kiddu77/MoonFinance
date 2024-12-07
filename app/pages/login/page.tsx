@@ -28,15 +28,17 @@ const LoginPage: React.FC = () => {
               />
             </div>
 
-            <button 
-              className="w-full" 
-              style={{ 
-                backgroundColor: '#12C38C', 
-                color: 'white', 
-                padding: '12px', 
-                borderRadius: '8px', 
-                transition: 'background-color 0.3s ease' 
+            {/* Fixed Button */}
+            <button
+              className="w-full"
+              style={{
+                backgroundColor: '#12C38C',
+                color: 'white',
+                padding: '12px',
+                borderRadius: '8px',
+                transition: 'background-color 0.3s ease',
               }}
+            >
               LOGIN
             </button>
           </form>
@@ -53,7 +55,6 @@ const LoginPage: React.FC = () => {
 
           <p className="text-center mb-4 text-black">Continue with</p>
           <div className="flex justify-center space-x-4 mb-8">
-
             <button className="p-2 border rounded-full">
               <Image
                 src="https://res.cloudinary.com/dhrvr4sey/image/upload/v1726862669/google_oag3xu.png"
@@ -71,6 +72,7 @@ const LoginPage: React.FC = () => {
                 height={24}
               />
             </button>
+
             <button className="p-2 border rounded-full">
               <Image
                 src="https://res.cloudinary.com/dhrvr4sey/image/upload/v1726862669/mail_ryfif4.png"
