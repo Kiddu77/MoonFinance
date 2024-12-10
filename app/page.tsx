@@ -3,7 +3,7 @@
 "use client"; // Mark this file as a client component
 
 import React, { useEffect, useState } from 'react';
-import Home from './pages/Home/page';
+import Home from './pages/home/page';
 import LoginPage from './pages/login/page';
 import SignUpPage from './pages/signup/page';
 
