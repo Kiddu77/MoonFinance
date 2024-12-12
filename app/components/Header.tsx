@@ -1,6 +1,6 @@
-import React from 'react';
-import Image from 'next/image';
-
+import React from "react";
+import Image from "next/image";
+import Link from "next/link"; // Import Link from Next.js
 
 const Header: React.FC = () => {
   return (
@@ -16,16 +16,47 @@ const Header: React.FC = () => {
       </div>
       <nav>
         <ul className="flex space-x-14 text-black">
-          <li>Home</li>
-          <li>About</li>
-          <li>Services</li>
-          <li>Blogs</li>
-          <li>Contact Us</li>
+          <li>
+            <Link href="/pages/home" className="hover:text-violet-500">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link href="/pages/aboutus" className="hover:text-violet-500">
+              About
+            </Link>
+          </li>
+          <li>
+            <Link href="/services" className="hover:text-violet-500">
+              Services
+            </Link>
+          </li>
+          <li>
+            <Link href="/blogs" className="hover:text-violet-500">
+              Blogs
+            </Link>
+          </li>
+          <li>
+            <Link href="/contact-us" className="hover:text-violet-500">
+              Contact Us
+            </Link>
+          </li>
         </ul>
       </nav>
+
       <div className="flex space-x-2">
-        <button className="px-4 py-2 border rounded-full border-black text-black">Log in</button>
-        <button className="px-4 py-2 border rounded-full border-black text-black">Sign up</button>
+        <Link
+          href="/pages/login"
+          className="px-4 py-2 border rounded-full border-black text-black"
+        >
+          Log in
+        </Link>
+        <Link
+          href="/pages/signup"
+          className="px-4 py-2 border rounded-full border-black text-black"
+        >
+          Sign up
+        </Link>
       </div>
     </header>
   );
