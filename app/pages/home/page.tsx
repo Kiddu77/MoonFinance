@@ -1,5 +1,3 @@
-// app/HomePage.tsx
-
 import React from 'react';
 import Home from '../../components/Home'; // Adjust the path if necessary
 import Faq from '@/app/components/Faq';

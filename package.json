@@ -9,12 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "firebase": "^11.0.2",
     "lucide-react": "^0.441.0",
+    "mongoose": "^8.8.4",
     "next": "14.2.13",
-    "react": "^18",
+    "react": "^18.3.1",
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
