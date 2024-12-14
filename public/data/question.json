@@ -1,0 +1,43 @@
+[
+    {
+      "id": "1",
+      "question": "Are you an experienced investor or invested before?",
+      "options": [
+        "Yes, very experienced",
+        "Somewhat experienced",
+        "A few times",
+        "Not at all"
+      ]
+    },
+    {
+        "id": "1",
+        "question": "Are you an experienced investor or invested before?",
+        "options": [
+          "Yes, very experienced",
+          "Somewhat experienced",
+          "A few times",
+          "Not at all"
+        ]
+      },
+      {
+        "id": "1",
+        "question": "Are you an experienced investor or invested before?",
+        "options": [
+          "Yes, very experienced",
+          "Somewhat experienced",
+          "A few times",
+          "Not at all"
+        ]
+      },
+      {
+        "id": "1",
+        "question": "Are you an experienced investor or invested before?",
+        "options": [
+          "Yes, very experienced",
+          "Somewhat experienced",
+          "A few times",
+          "Not at all"
+        ]
+      }
+  ]
+  
