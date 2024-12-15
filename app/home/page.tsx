@@ -1,5 +1,5 @@
 import React from 'react';
-import Home from '../../components/Home'; // Adjust the path if necessary
+import Home from '../components/Home'; // Adjust the path if necessary
 import Faq from '@/app/components/Faq';
 import Recognitions from '@/app/components/Recognitions';
 import Solutions from '@/app/components/Solutions';

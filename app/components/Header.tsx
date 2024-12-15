@@ -1,10 +1,12 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 
 const Header: React.FC = () => {
+  // const router = useRouter()
   return (
-    <header className="flex justify-between items-center p-4">
+    <header className="flex justify-between items-center p-4 bg-white">
       <div className="flex items-center">
         <Image
           src="https://res.cloudinary.com/dhrvr4sey/image/upload/v1726864546/Logo_cla0fe.png"
@@ -16,16 +18,16 @@ const Header: React.FC = () => {
       </div>
       <nav>
         <ul className="flex space-x-14 text-black">
-          <li>Home</li>
-          <li>About</li>
+          <li><Link href="/">Home</Link></li>
+          <li><Link href="/about">About</Link></li>
           <li>Services</li>
           <li>Blogs</li>
-          <li>Contact Us</li>
+          <li><Link href="/footer">Contact Us</Link></li>
         </ul>
       </nav>
       <div className="flex space-x-2">
-        <button className="px-4 py-2 border rounded-full border-black text-black">Log in</button>
-        <button className="px-4 py-2 border rounded-full border-black text-black">Sign up</button>
+        <Link href="/login" className="px-4 py-2 border rounded-full border-black text-black">Log in</Link>
+        <Link href="/signup" className="px-4 py-2 border rounded-full border-black text-black">Sign up</Link>
       </div>
     </header>
   );

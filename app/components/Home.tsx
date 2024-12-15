@@ -2,7 +2,6 @@
 import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import Header from "@/app/components/Header";
 // import screenshot from "@public/screenshot.png"
 
 const Home: React.FC = () => {
@@ -10,7 +9,6 @@ const Home: React.FC = () => {
 
   return (
     <div className="bg-white min-h-screen">
-      <Header />
       <div className="flex flex-col lg:flex-row items-center justify-between px-4 lg:px-20 py-8">
         <div className="lg:w-1/2 mb-8 lg:mb-0">
           <h1 className="text-4xl lg:text-5xl font-bold mb-4 text-slate-700">

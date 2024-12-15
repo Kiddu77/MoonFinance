@@ -1,11 +1,35 @@
-import React from 'react';
-import Header from '../../components/Header';
+"use client"
+import React, {useRef} from 'react';
 import Image from 'next/image';
+import {signup} from '@/server/auth/signup';
 
 const SignUpPage: React.FC = () => {
+  const formRef = useRef<HTMLFormElement>(null); // Create a ref for the form
+
+  const handleSignUp = async (e: React.FormEvent) => {
+
+    e.preventDefault();
+    
+    if (formRef.current) {
+      const formData = new FormData(formRef.current); // Create FormData from the form
+      // You can now access the form data like this:
+      const username = formData.get('username') as string | null;
+      const phone = formData.get('phone') as string | null;
+      const email = formData.get('email') as string | null;
+      const password = formData.get('password') as string | null;
+
+      console.log({ username, phone, email, password });
+      if(!username || !phone || !email || !password){
+        return; // toaster component to show error
+      }
+      const user = await signup({ username, phone, email, password });
+      console.log(user);
+
+    }
+  }
+
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      <Header />
       <div className="flex flex-col md:flex-row h-screen">
         <div className="w-full md:w-1/2 h-full">
           <div className="w-full h-full relative">
@@ -21,22 +45,22 @@ const SignUpPage: React.FC = () => {
         <div className="w-full md:w-1/2 flex items-center justify-center p-8 bg-white">
           <div className="w-full max-w-md">
             <h1 className="text-5xl font-bold mb-8" style={{ color: '#12C38C' }}>Sign up</h1>
-            <form>
+            <form ref={formRef} onSubmit={handleSignUp} className='text-black'>
               <div className="mb-4">
                 <label htmlFor="username" className="block text-gray-700 mb-2">Username:</label>
-                <input type="text" id="username" className="w-full p-2 border border-gray-300 rounded" />
+                <input name="username" type="text" id="username" className="w-full p-2 border border-gray-300 rounded" />
               </div>
               <div className="mb-4">
                 <label htmlFor="phone" className="block text-gray-700 mb-2">Phone Number:</label>
-                <input type="tel" id="phone" className="w-full p-2 border border-gray-300 rounded" />
+                <input name="phone" type="tel" id="phone" className="w-full p-2 border border-gray-300 rounded" />
               </div>
               <div className="mb-4">
                 <label htmlFor="email" className="block text-gray-700 mb-2">Email:</label>
-                <input type="email" id="email" className="w-full p-2 border border-gray-300 rounded" />
+                <input name="email" type="email" id="email" className="w-full p-2 border border-gray-300 rounded" />
               </div>
               <div className="mb-6">
                 <label htmlFor="password" className="block text-gray-700 mb-2">Password:</label>
-                <input type="password" id="password" className="w-full p-2 border border-gray-300 rounded" />
+                <input name="password" type="password" id="password" className="w-full p-2 border border-gray-300 rounded" />
               </div>
               <button type="submit" className="w-full text-white py-2 rounded-md transition duration-300" style={{ backgroundColor: '#12C38C' }}>
                 Create Account
