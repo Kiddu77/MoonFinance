@@ -1,10 +1,12 @@
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link"; // Import Link from Next.js
 
 const Header: React.FC = () => {
+  // const router = useRouter()
   return (
-    <header className="flex justify-between items-center p-4">
+    <header className="flex justify-between items-center p-4 bg-white">
       <div className="flex items-center">
         <Image
           src="https://res.cloudinary.com/dhrvr4sey/image/upload/v1726864546/Logo_cla0fe.png"
@@ -16,6 +18,7 @@ const Header: React.FC = () => {
       </div>
       <nav>
         <ul className="flex space-x-14 text-black">
+
           <li>
             <Link href="/pages/home" className="hover:text-violet-500">
               Home
@@ -45,6 +48,7 @@ const Header: React.FC = () => {
       </nav>
 
       <div className="flex space-x-2">
+
         <Link
           href="/pages/login"
           className="px-4 py-2 border rounded-full border-black text-black"
