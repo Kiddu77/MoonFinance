@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-import Header from '@/app/components/Header';
 import img1 from "@/app/assets/img1.jpg";
 import img2 from "@/app/assets/img2.jpg";
 import img3 from "@/app/assets/img3.jpg";
@@ -42,7 +41,6 @@ const AboutUs: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      {/* <Header /> */}
 
       {/* Main content */}
       <div className="container mx-auto p-16 bg-white text-black">

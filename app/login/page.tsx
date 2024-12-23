@@ -22,6 +22,9 @@ const LoginPage: React.FC = () => {
           return; // toaster component to show error
         }
         const user = await login({email, password });
+        if (user) {
+          console.log("User logged in:", user);
+        }
       }
     }
   
