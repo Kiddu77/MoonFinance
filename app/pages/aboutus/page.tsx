@@ -42,7 +42,7 @@ const AboutUs: React.FC = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      <Header />
+      {/* <Header /> */}
 
       {/* Main content */}
       <div className="container mx-auto p-16 bg-white text-black">

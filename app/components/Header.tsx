@@ -20,7 +20,7 @@ const Header: React.FC = () => {
         <ul className="flex space-x-14 text-black">
 
           <li>
-            <Link href="/pages/home" className="hover:text-violet-500">
+            <Link href="/home" className="hover:text-violet-500">
               Home
             </Link>
           </li>
@@ -50,13 +50,13 @@ const Header: React.FC = () => {
       <div className="flex space-x-2">
 
         <Link
-          href="/pages/login"
+          href="/login"
           className="px-4 py-2 border rounded-full border-black text-black"
         >
           Log in
         </Link>
         <Link
-          href="/pages/signup"
+          href="/signup"
           className="px-4 py-2 border rounded-full border-black text-black"
         >
           Sign up
