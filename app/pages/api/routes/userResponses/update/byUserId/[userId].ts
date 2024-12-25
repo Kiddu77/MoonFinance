@@ -6,16 +6,18 @@ import { calcRisk } from "@/server/utils/risk";
 import { calcStability } from "@/server/utils/stability";
 
 interface UpdateFields {
-  questions?: Record<string, any>;
+  questions?: Record<string, number>;
   risk?: number;
   diversity?: number;
   stablity?: number;
   [key: string]: any;
+  //[key: string]: string | number | Record<string, number> | undefined;
+
 }
 
 interface ResponseData {
   message: string;
-  result?: any; 
+  result?: object; 
   error?: string;
 }
 
@@ -37,15 +39,26 @@ export default async function handler(
     if (!existingUserResponse) {
       return res.status(404).json({ message: "User not found" });
     }
+    // previous code typw error was coming 
+    // if (updateFields.questions) {
+    //   for (const [key, value] of Object.entries(updateFields.questions)) {
+    //     existingUserResponse.questions[key] = value;
+    //   }
+    //   // updateFields.risk = calcRisk(existingUserResponse.questions);
+    //   // updateFields.diversity = calcDiversity(existingUserResponse.questions);
+    //   // updateFields.stablity = calcStability(existingUserResponse.questions);
+    //   // updateFields.questions = existingUserResponse.questions;
+    // }
 
     if (updateFields.questions) {
       for (const [key, value] of Object.entries(updateFields.questions)) {
-        existingUserResponse.questions[key] = value;
+        existingUserResponse.questions[key] = value as number;
       }
-      updateFields.risk = calcRisk(existingUserResponse.questions);
-      updateFields.diversity = calcDiversity(existingUserResponse.questions);
-      updateFields.stablity = calcStability(existingUserResponse.questions);
-      updateFields.questions = existingUserResponse.questions;
+
+      updateFields.risk = calcRisk(existingUserResponse.questions as Record<string, number>);
+      updateFields.diversity = calcDiversity(existingUserResponse.questions as Record<string, number>);
+      updateFields.stablity = calcStability(existingUserResponse.questions as Record<string, number>);
+      updateFields.questions = existingUserResponse.questions as Record<string, number>;
     }
 
     const result = await userResponse.updateOne(

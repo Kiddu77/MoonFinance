@@ -1,43 +1,97 @@
 [
-    {
-      "id": "1",
-      "question": "Are you an experienced investor or invested before?",
-      "options": [
-        "Yes, very experienced",
-        "Somewhat experienced",
-        "A few times",
-        "Not at all"
-      ]
-    },
-    {
-        "id": "1",
-        "question": "Are you an experienced investor or invested before?",
-        "options": [
-          "Yes, very experienced",
-          "Somewhat experienced",
-          "A few times",
-          "Not at all"
-        ]
-      },
-      {
-        "id": "1",
-        "question": "Are you an experienced investor or invested before?",
-        "options": [
-          "Yes, very experienced",
-          "Somewhat experienced",
-          "A few times",
-          "Not at all"
-        ]
-      },
-      {
-        "id": "1",
-        "question": "Are you an experienced investor or invested before?",
-        "options": [
-          "Yes, very experienced",
-          "Somewhat experienced",
-          "A few times",
-          "Not at all"
-        ]
-      }
-  ]
-  
+  {
+    "id": "1",
+    "question": "How much investing experience do you have?",
+    "options": [
+      "Very inexperienced",
+      "Somewhat inexperienced",
+      "Somewhat experienced",
+      "Experienced",
+      "Very experienced"
+    ]
+  },
+  {
+    "id": "2",
+    "question": "In case of your investment goes down 10% after investing, what will you do?",
+    "options": [
+      "Will exit and will invest in FD",
+      "Will hold till cost price comes and exit there",
+      "No worry, invested for long term",
+      "Average"
+    ]
+  },
+  {
+    "id": "3",
+    "question": "Your investment pattern.",
+    "options": [
+      "Low risk, Low return",
+      "Moderate risk, Moderate return",
+      "High risk, High return"
+    ]
+  },
+  {
+    "id": "4",
+    "question": "When making a long-term investment, I plan to keep the money invested for... ?",
+    "options": [
+      "1-2 years",
+      "3-4 years",
+      "5-6 years",
+      "7-8 years",
+      "More than 8 years"
+    ]
+  },
+  {
+    "id": "5",
+    "question": "My current and future income sources (for example, salary, social security, pensions) are...",
+    "options": [
+      "Very unstable",
+      "Unstable",
+      "Somewhat stable",
+      "Stable",
+      "Very Stable"
+    ]
+  },
+  {
+    "id": "6",
+    "question": "During market declines, I tend to sell portions of my riskier assets and invest the money in safer assets.",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Somewhat agree",
+      "Disagree",
+      "Strongly disagree"
+    ]
+  },
+  {
+    "id": "7",
+    "question": "I would invest in a mutual fund or ETF (exchanged-traded fund) based solely on a brief conversation with a friend, co-worker, or relative.",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Somewhat agree",
+      "Disagree",
+      "Strongly disagree"
+    ]
+  },
+  {
+    "id": "8",
+    "question": "If I owned a stock investment that lost about 24% in three months, I would..",
+    "options": [
+      "Sell all the remaining investment",
+      "Sell a portion of the remaining investment",
+      "Hold onto the investment and sell nothing",
+      "Buy more of the remaining investment"
+    ]
+  },
+  {
+    "id": "9",
+    "question": "Generally, I prefer an investment with little or no ups and downs in value, and I am willing to accept the lower returns these investments may make.",
+    "options": [
+      "Strongly agree",
+      "Agree",
+      "Somewhat agree",
+      "Disagree",
+      "Strongly disagree"
+    ]
+  }
+]

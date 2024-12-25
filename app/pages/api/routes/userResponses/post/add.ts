@@ -7,13 +7,13 @@ import { calcStability } from "@/server/utils/stability";
 
 interface RequestBody {
   userId: string;
-  questions: Record<string, any>;
+  questions: Record<string, number>;
   maxQuestions: number;
 }
 
 interface ResponseData {
   message: string;
-  result?: any; 
+  result?: object; 
   warning?: string;
   error?: string;
 }
