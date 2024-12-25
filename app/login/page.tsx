@@ -1,16 +1,41 @@
-import Header from '@/app/components/Header';
-import React from 'react';
+"use client"
+
+import React, {useRef} from 'react';
 import Image from 'next/image';
+import {login} from '@/server/auth/login';
 
 const LoginPage: React.FC = () => {
+
+    const formRef = useRef<HTMLFormElement>(null); // Create a ref for the form
+  
+    const handleLogin = async (e: React.FormEvent) => {
+  
+      e.preventDefault();
+      
+      if (formRef.current) {
+        const formData = new FormData(formRef.current);
+        // You can now access the form data like this:
+        const email = formData.get('email') as string | null;
+        const password = formData.get('password') as string | null;
+  
+        if(!email || !password){
+          return; // toaster component to show error
+        }
+        const user = await login({email, password });
+        if (user) {
+          console.log("User logged in:", user);
+        }
+      }
+    }
+  
+
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      <Header />
       <main className="flex flex-1">
         <div className="w-full md:w-1/2 p-12 flex flex-col justify-center">
           <h1 className="text-6xl font-bold mb-8 text-[#12C38C]">Welcome!</h1>
           
-          <form className="space-y-6">
+          <form ref={formRef} onSubmit={handleLogin} className="space-y-6">
             <div>
               <input
                 type="email"

@@ -4,7 +4,8 @@ import userResponse from "@/server/model/userResponses.model";
 
 type Data = {
   message?: string;
-  data?: object; 
+  //data?: any;
+  data?: object;  
 };
 
 export default async function handler(

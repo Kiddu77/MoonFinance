@@ -4,6 +4,7 @@ import userResponse from "@/server/model/userResponses.model";
 
 type Data = {
   message: string;
+  //result?: any;
   result?: object; 
 };
 
