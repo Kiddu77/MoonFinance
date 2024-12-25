@@ -12,6 +12,7 @@
     "@next/font": "^14.2.15",
     "@vonage/server-client": "^1.16.1",
     "bcrypt": "^5.1.1",
+    "cookies-next": "^5.0.2",
     "firebase": "^11.0.2",
     "lucide-react": "^0.441.0",
     "mongoose": "^8.9.0",

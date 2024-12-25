@@ -110,12 +110,12 @@ const QuizPage: React.FC = () => {
     <div className="flex flex-col min-h-screen">
       {/* Header */}
       <div className="bg-white shadow-md">
-        <Header />
+        {/* commented out since header is coming automatically  */}
+        {/*<Header />*/}
       </div>
 
       {/* Main Content */}
       <main className="flex-grow flex flex-col items-center justify-center bg-gradient-to-b from-black to-[#03ffc824] text-white px-16">
-        <Header />
         <div className="text-center mb-8">
           <h2 className="text-2xl font-bold">{currentQuestion.question}</h2>
         </div>
