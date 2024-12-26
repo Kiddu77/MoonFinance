@@ -3,7 +3,6 @@ import Image from 'next/image';
 import circle from "../assets/circle.png"
 import AssetBar from '../distrib/AssetBar';
 import pie from '../assets/pieChart.jpg';
-import phone from '../assets/call.jpg';
 import { FaSquarePhone } from "react-icons/fa6";
 import Footer from '../components/Footer';
 const distrib = () => {
