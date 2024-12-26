@@ -7,40 +7,46 @@ import TransactionHistory from "./TransactionHistory";
 import Footer from "../components/Footer";
 
 const Page = () => {
-  const [transactions, setTransactions] = useState([
-    {
-      id: '1',
-      basket: 'Basket 1',
-      price: 5000,
-      cagr: 32
-    },
-    {
-      id: '2',
-      basket: 'Basket 2',
-      price: 5000,
-      cagr: 32
-    },
-    {
-      id: '3',
-      basket: 'Basket 3',
-      price: 5000,
-      cagr: 32
-    },
-    {
-      id: '4',
-      basket: 'Basket 4',
-      price: 5000,
-      cagr: 32
-    }
-  ]);
+  const [transactions, setTransactions] = useState<
+    Array<{ id: string; basket: string; price: number; cagr: number }>
+  >([]);
+
+  React.useEffect(() => {
+    setTransactions([
+      {
+        id: "1",
+        basket: "Basket 1",
+        price: 5000,
+        cagr: 32,
+      },
+      {
+        id: "2",
+        basket: "Basket 2",
+        price: 5000,
+        cagr: 32,
+      },
+      {
+        id: "3",
+        basket: "Basket 3",
+        price: 5000,
+        cagr: 32,
+      },
+      {
+        id: "4",
+        basket: "Basket 4",
+        price: 5000,
+        cagr: 32,
+      },
+    ]);
+  }, []);
 
   // Rest of your component code...
   const handleViewBasket = (id: string) => {
-    console.log('Viewing basket:', id);
+    console.log("Viewing basket:", id);
   };
-  
+
   const handleLoadMore = () => {
-    console.log('Loading more transactions...');
+    console.log("Loading more transactions...");
   };
 
   const equitySection = {
@@ -50,13 +56,13 @@ const Page = () => {
     subItems: [
       {
         description: "Lorem ipsum dolor sit amet consectetur",
-        percentage: 30
+        percentage: 30,
       },
       {
         description: "Lorem ipsum dolor sit amet consectetur",
-        percentage: 20
-      }
-    ]
+        percentage: 20,
+      },
+    ],
   };
 
   const debtSection = {
@@ -66,13 +72,13 @@ const Page = () => {
     subItems: [
       {
         description: "Lorem ipsum dolor sit amet consectetur",
-        percentage: 20
+        percentage: 20,
       },
       {
         description: "Lorem ipsum dolor sit amet consectetur",
-        percentage: 10
-      }
-    ]
+        percentage: 10,
+      },
+    ],
   };
 
   const goldSection = {
@@ -82,13 +88,13 @@ const Page = () => {
     subItems: [
       {
         description: "Lorem ipsum dolor sit amet consectetur",
-        percentage: 60
+        percentage: 60,
       },
       {
         description: "Lorem ipsum dolor sit amet consectetur",
-        percentage: 10
-      }
-    ]
+        percentage: 10,
+      },
+    ],
   };
 
   return (
@@ -123,7 +129,7 @@ const Page = () => {
       <h1 className="text-5xl text-black pt-20 px-16 font-bold">
         Your Investments
       </h1>
-      
+
       <div className="space-y-8 px-16 pt-10">
         <AssetSection {...equitySection} />
         <AssetSection {...debtSection} />
@@ -131,16 +137,15 @@ const Page = () => {
       </div>
 
       <div className="px-16 pt-10">
-        <TransactionHistory 
+        <TransactionHistory
           transactions={transactions}
           onViewBasket={handleViewBasket}
           onLoadMore={handleLoadMore}
         />
       </div>
       <div className="mt-2">
-      <Footer></Footer>
+        <Footer></Footer>
       </div>
-      
     </div>
   );
 };
