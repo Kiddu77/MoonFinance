@@ -10,8 +10,8 @@ interface UpdateFields {
   risk?: number;
   diversity?: number;
   stablity?: number;
-  [key: string]: any;
-  //[key: string]: string | number | Record<string, number> | undefined;
+  // [key: string]: any;
+  [key: string]: string | number | Record<string, number> | undefined;
 
 }
 
