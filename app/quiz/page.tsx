@@ -19,7 +19,7 @@ const QuizPage: React.FC = () => {
   const [questions, setQuestions] = useState<Question[]>([]);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
-  const router = useRouter(); 
+  // const router = useRouter(); 
   const userUid = getCookie("userUid");
   const isAuth = getCookie("auth") || "false";
 
