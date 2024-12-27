@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import Header from "@/app/components/Header";
+// import Header from "@/app/components/Header";
 import { getCookie } from "cookies-next";
 
 interface Question {
@@ -75,6 +75,7 @@ const QuizPage: React.FC = () => {
         if (data.result) {
           const { risk, diversity, stability } = data.result;
           const finalCalculation = [risk, diversity, stability];
+          console.log(finalCalculation);
         //uncomment when dashboard part  is defined 
         //   router.push({
         //                 pathname: "/dashboard",
