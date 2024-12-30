@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.9.6",
     "@next/font": "^14.2.15",
     "@vonage/server-client": "^1.16.1",
     "bcrypt": "^5.1.1",
