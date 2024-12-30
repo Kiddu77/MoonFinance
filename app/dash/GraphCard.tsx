@@ -41,10 +41,10 @@ const GraphCard = ({
   };
 
   return (
-    <div className="bg-white rounded-2xl p-4 w-[280px] h-[145px] shadow-md shadow-slate-400">
+    <div className="mb-5 md:mb-0 bg-white rounded-2xl p-4 w-[300px] md:w-[280px] h-[145px] shadow-md shadow-slate-400">
       <div className="">
-        <p className="text-xl px-4 text-[#6A706E] font-medium">{title}</p>
-        <p className="text-2xl text-[#3E3E3E] font-bold px-4">₹ {value}</p>
+        <p className="text-xl md:px-4 text-[#6A706E] font-medium">{title}</p>
+        <p className="text-2xl text-[#3E3E3E] font-bold md:px-4">₹ {value}</p>
       </div>
       
       <div className="h-10 mt-2">

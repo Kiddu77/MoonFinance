@@ -19,7 +19,7 @@ const Card = ({ title, value, splitIndex }: { title: string; value: string; spli
   };
 
   return (
-    <div className='h-[145px] w-[280px] bg-white rounded-3xl shadow-md shadow-slate-400'>
+    <div className='zh-[145px] w-[300px] md:w-[280px] bg-white rounded-3xl shadow-md shadow-slate-400 mb-5 py-5 md:py-0'>
       <p className='text-2xl p-4 text-[#6A706E] font-medium'>{title}</p>
       {renderValue()}
     </div>

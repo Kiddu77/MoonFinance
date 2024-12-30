@@ -8,15 +8,15 @@ import Footer from "../components/Footer";
 const distrib = () => {
   return (
     <div className="min-h-screen bg-white text-black">
-      <div className="h-[20%] bg-[#F9F8F8] flex justify-center space-x-52">
-        <div className="h-1/2 flex items-center mt-10 p-4 bg-">
+      <div className="md:flex-row flex-col items-center h-[20%] bg-[#F9F8F8] flex justify-center md:justify-evenly space-x-52 md:pb-5">
+        <div className="h-1/2  flex items-center mt-10 p-4 bg-">
           {/* Rupee div */}
           <div className="text-2xl flex-row text-[#6A706E]">
             Invested Amount
             <p className="text-[#12C38C] text-4xl">₹30,70,600</p>
           </div>
         </div>
-        <div className="flex items-center justify-center p-4 bg-white h-1/2 mt-10 shadow-gray-400 shadow-lg">
+        <div className="flex items-center justify-center  p-4 bg-white h-1/2 !m-0 !mb-10 md:!mb-0 md:!mt-10 shadow-gray-400 shadow-lg">
           {/* Right side */}
           <Image src={circle} alt="" height={20} width={20} className="" />
 
@@ -29,8 +29,8 @@ const distrib = () => {
 
       <div>
         {/* Body Div */}
-        <h1 className="text-5xl p-6 px-20 font-semibold">Your Assets</h1>
-        <div className="h-[20%] flex flex-row justify-between px-20">
+        <h1 className="text-center md:text-left text-4xl md:text-5xl p-6 px-20 font-semibold">Your Assets</h1>
+        <div className="h-[20%] flex flex-col md:flex-row justify-between px-20">
           {/* Asset Bar */}
           <AssetBar title="Amount Invested" value="₹ 5000" />
           <AssetBar
@@ -50,10 +50,10 @@ const distrib = () => {
 
       <div className="h-full mt-6">
         {/* about the alloc */}
-        <div className="text-3xl pt-10 px-20 font-semibold ">
+        <div className="md:mt-0 mt-10 text-3xl p-2 md:pt-10 md:px-20 font-semibold text-center md:text-left">
           About the Allocation
-          <div className="flex flex-row">
-            <div className="w-1/2 h-full font-thin text-[#6A706E] p-4 text-lg">
+          <div className="flex flex-col-reverse md:flex-row items-center ">
+            <div className="w-full md:w-1/2 h-full font-thin text-[#6A706E] p-4 text-lg">
               {/* Text and Button  */}
               <p className="pb-8">
                 Lorem ipsum dolor sit amet consectetur. Nec mauris ut id quam
@@ -67,13 +67,13 @@ const distrib = () => {
               <button className="rounded-lg w-[52%] h-fit bg-[#12C38C] p-4 text-white font-extrabold">
                 Take Quiz Again
               </button>
-              <p className="text-sm text-center w-[52%]">
+              <p className="text-sm text-center w-full md:w-[52%]">
                 You can risk analyse before investing.
               </p>
-              <div className="flex items-center pt-2">
+              <div className="flex items-center pt-2 md:justify-normal justify-center">
                 <FaSquarePhone className="text-[#12C38C] text-5xl mt-4"></FaSquarePhone>
 
-                <p className="font-bold text-black px-4 text-3xl pt-4">
+                <p className=" font-bold text-black px-4 text-3xl pt-4">
                   Contact Us
                 </p>
               </div>
