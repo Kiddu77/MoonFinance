@@ -1,7 +1,7 @@
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
 
+import React from "react";
+import Image from "next/image";
+import Link from "next/link"; // Import Link from Next.js
 
 const Header: React.FC = () => {
   // const router = useRouter()
@@ -18,16 +18,49 @@ const Header: React.FC = () => {
       </div>
       <nav>
         <ul className="flex space-x-14 text-black">
-          <li><Link href="/">Home</Link></li>
-          <li><Link href="/about">About</Link></li>
-          <li>Services</li>
-          <li>Blogs</li>
-          <li><Link href="/footer">Contact Us</Link></li>
+
+          <li>
+            <Link href="/pages/home" className="hover:text-violet-500">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link href="/pages/aboutus" className="hover:text-violet-500">
+              About
+            </Link>
+          </li>
+          <li>
+            <Link href="/services" className="hover:text-violet-500">
+              Services
+            </Link>
+          </li>
+          <li>
+            <Link href="/blogs" className="hover:text-violet-500">
+              Blogs
+            </Link>
+          </li>
+          <li>
+            <Link href="/contact-us" className="hover:text-violet-500">
+              Contact Us
+            </Link>
+          </li>
         </ul>
       </nav>
+
       <div className="flex space-x-2">
-        <Link href="/login" className="px-4 py-2 border rounded-full border-black text-black">Log in</Link>
-        <Link href="/signup" className="px-4 py-2 border rounded-full border-black text-black">Sign up</Link>
+
+        <Link
+          href="/pages/login"
+          className="px-4 py-2 border rounded-full border-black text-black"
+        >
+          Log in
+        </Link>
+        <Link
+          href="/pages/signup"
+          className="px-4 py-2 border rounded-full border-black text-black"
+        >
+          Sign up
+        </Link>
       </div>
     </header>
   );
