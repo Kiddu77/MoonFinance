@@ -1,7 +1,7 @@
 import { calcRisk } from "./risk";
 
 interface UserResponse {
-  [key: string]: number;
+  [key: string]: number; 
 }
 
 export const calcDiversity = (userResponse: UserResponse): number => {
@@ -9,8 +9,7 @@ export const calcDiversity = (userResponse: UserResponse): number => {
     userResponse["4"] * 0.1 +
     userResponse["5"] * 0.08 +
     userResponse["6"] * 0.1;
-
-  const riskScore = calcRisk(userResponse);
-
+  
+  const riskScore = calcRisk(userResponse); 
   return parseFloat(diversityScore.toFixed(4));
 };
