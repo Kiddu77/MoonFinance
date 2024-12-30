@@ -105,14 +105,14 @@ const Page = () => {
       <p className="text-lg font-light px-10 text-[#6A706E] pb-10">
         Welcome to your financial insights!
       </p>
-      <div className="flex flex-row gap-x-16 px-20">
+      <div className="flex flex-col md:flex-row gap-x-16 px-20 md:items-stretch items-center">
         <Card title="Amount Invested" value="₹ 5000" />
         <Card title="Assets Invested In" value="3" />
         <Card title="Expected CAGR" value="10.28%" splitIndex={2} />
         <Card title="Rebalance Frequency" value="Quarterly" />
       </div>
       <div>
-        <div className="flex flex-row gap-x-16 px-20 pt-10">
+        <div className="flex items-center md:items-baseline flex-col md:flex-row gap-x-16 px-20  md:pt-10">
           <GraphCard
             title="Total Investments"
             value="3,90,8000"
@@ -126,17 +126,17 @@ const Page = () => {
         </div>
       </div>
 
-      <h1 className="text-5xl text-black pt-20 px-16 font-bold">
+      <h1 className="text-5xl text-black pt-20 px-10 md:px-16 font-bold">
         Your Investments
       </h1>
 
-      <div className="space-y-8 px-16 pt-10">
+      <div className="space-y-8 px-10 md:px-16 pt-10">
         <AssetSection {...equitySection} />
         <AssetSection {...debtSection} />
         <AssetSection {...goldSection} />
       </div>
 
-      <div className="px-16 pt-10">
+      <div className="px-10 md:px-16 pt-10 md:mb-0 mb-5">
         <TransactionHistory
           transactions={transactions}
           onViewBasket={handleViewBasket}
