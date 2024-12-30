@@ -10,6 +10,7 @@ const SignUpPage: React.FC = () => {
   const [verificationStep, setVerificationStep] = useState<'form' | 'otp'>('form');
   const [otpCode, setOtpCode] = useState('');
   const [pendingVerification, setPendingVerification] = useState(false);
+  console.log(pendingVerification); // to be used later
   const [formData, setFormData] = useState<{
     username: string;
     phone: string;
@@ -84,8 +85,10 @@ const SignUpPage: React.FC = () => {
       if (result.status === "complete" && formData) {
         // Create user in your database
         try {
-          const user = await signup(formData);
+          const user = await signup(formData); // to be used later
+          
           console.log('User created:');
+          console.log(user);
           
           // Redirect to dashboard or home page
           window.location.href = "/";
