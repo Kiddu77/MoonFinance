@@ -4,6 +4,7 @@
 import React from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { TooltipItem } from 'chart.js';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -35,7 +36,7 @@ const DonutChart: React.FC<DonutChartProps> = ({ equity, gold, debt }) => {
       },
       tooltip: {
         callbacks: {
-          label: (tooltipItem: any) => {
+          label: (tooltipItem: TooltipItem<'doughnut'>) => {
             return `${tooltipItem.label}: ${tooltipItem.raw}%`;
           },
         },
