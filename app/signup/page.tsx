@@ -21,6 +21,7 @@ const SignUpPage: React.FC = () => {
   const [verificationStep, setVerificationStep] = useState<"form" | "otp">("form");
   const [otpCode, setOtpCode] = useState<string>("");
   const [pendingVerification, setPendingVerification] = useState<boolean>(false);
+  console.log(pendingVerification);
   const [formData, setFormData] = useState<FormData | null>(null);
   const [error, setError] = useState<string>("");
 
