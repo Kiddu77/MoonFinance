@@ -135,7 +135,8 @@ const SearchParamsHandler: React.FC = () => {
               <p className="pb-8">
                 Lorem ipsum dolor sit amet consectetur. Nec mauris ut id quam netus. Pellentesque sed aliquet tortor auctor dictum sodales leo.
               </p>
-              <button className="rounded-lg w-[52%] h-fit bg-[#12C38C] p-4 text-white font-extrabold">
+              <button className="rounded-lg w-[52%] h-fit bg-[#12C38C] p-4 text-white font-extrabold"
+                onClick={() => (window.location.href = "/quiz")}>
                 Take Quiz Again
               </button>
               <p className="text-sm text-center w-full md:w-[52%]">You can risk analyze before investing.</p>
