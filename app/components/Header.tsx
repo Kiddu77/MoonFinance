@@ -39,16 +39,6 @@ const Header: React.FC = () => {
             </Link>
           </li>
           <li>
-            <Link href="/services" className="hover:text-violet-500">
-              Services
-            </Link>
-          </li>
-          <li>
-            <Link href="/blogs" className="hover:text-violet-500">
-              Blogs
-            </Link>
-          </li>
-          <li>
             <Link href="/contact-us" className="hover:text-violet-500">
               Contact Us
             </Link>

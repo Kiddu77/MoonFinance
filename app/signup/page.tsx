@@ -1,3 +1,5 @@
+// signup/page.tsx
+
 "use client"
 import React, {useRef} from 'react';
 import Image from 'next/image';
@@ -93,4 +95,4 @@ const SignUpPage: React.FC = () => {
   );
 };
 
-export default SignUpPage;
+export default SignUpPage;
