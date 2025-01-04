@@ -1,37 +1,94 @@
-// signup/page.tsx
-
-"use client"
-import React, {useRef} from 'react';
-import Image from 'next/image';
-import {signup} from '@/server/auth/signup';
+"use client";
+import React, { useRef, useState } from "react";
+import Image from "next/image";
+import { signup } from "@/server/auth/signup";
 import { useRouter } from "next/navigation";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { auth } from "@/app/lib/firebase";
+import { useAuth } from "@/app/components/AuthProvider";
+import { IUser } from "@/server/model/users.model";
 
 const SignUpPage: React.FC = () => {
-  const formRef = useRef<HTMLFormElement>(null); // Create a ref for the form
+  const formRef = useRef<HTMLFormElement>(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
   const router = useRouter();
+  const { setUser } = useAuth(); // Access the AuthContext to set the user state
 
+  // Handle manual signup
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+    setLoading(true);
+    setError("");
+
     if (formRef.current) {
       const formData = new FormData(formRef.current);
 
-      // You can now access the form data like this:
-      const username = formData.get('username') as string | null;
-      const phone = formData.get('phone') as string | null;
-      const email = formData.get('email') as string | null;
-      const password = formData.get('password') as string | null;
+      const username = formData.get("username") as string | null;
+      const phone = formData.get("phone") as string | null;
+      const email = formData.get("email") as string | null;
+      const password = formData.get("password") as string | null;
 
-      if(!username || !phone || !email || !password){
-        return; // toaster component to show error
+      if (!username || !phone || !email || !password) {
+        setError("All fields are required.");
+        setLoading(false);
+        return;
       }
 
-      const user = await signup({ username, phone, email, password });
-      if (user) {
-        router.push('/otp'); // Redirect to OTP page
+      try {
+        const user = await signup({ username, phone, email, password });
+        if (user) {
+          // Optionally update the user in AuthContext
+          setUser(user as IUser); // Assuming `signup` returns user details
+
+          // Redirect to homepage
+          router.push("/");
+        }
+      } catch (err: any) {
+        setError(err.message || "Failed to create account. Please try again.");
+      } finally {
+        setLoading(false);
       }
     }
-  }
+  };
+
+  // Handle Google login
+  const handleGoogleLogin = async () => {
+    setLoading(true);
+    setError("");
+    const provider = new GoogleAuthProvider();
+
+    try {
+      const result = await signInWithPopup(auth, provider);
+      const firebaseUser = result.user;
+
+      // Send the user data to your server
+      const response = await fetch("/api/auth/user", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: firebaseUser.email,
+          name: firebaseUser.displayName,
+          userUid: firebaseUser.uid, // Changed from userId to userUid
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Failed to process user");
+      }
+
+      const data = await response.json();
+      setUser(data.user as IUser); // Update the AuthContext with the user
+      router.push("/"); // Redirect to homepage
+    } catch (err: any) {
+      console.error("Error during Google login:", err);
+      setError("Google login failed. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
@@ -46,48 +103,85 @@ const SignUpPage: React.FC = () => {
             />
           </div>
         </div>
-        
+
         <div className="w-full md:w-1/2 flex items-center justify-center p-8 bg-white">
           <div className="w-full max-w-md">
-            <h1 className="text-5xl font-bold mb-8" style={{ color: '#12C38C' }}>Sign up</h1>
-            <form ref={formRef} onSubmit={handleSignUp} className='text-black'>
+            <h1 className="text-5xl font-bold mb-8" style={{ color: "#12C38C" }}>
+              Sign up
+            </h1>
+            <form ref={formRef} onSubmit={handleSignUp} className="text-black">
               <div className="mb-4">
-                <label htmlFor="username" className="block text-gray-700 mb-2">Username:</label>
-                <input name="username" type="text" id="username" className="w-full p-2 border border-gray-300 rounded" />
+                <input
+                  name="username"
+                  type="text"
+                  placeholder="Username"
+                  className="w-full p-2 border-b border-gray-300 focus:outline-none focus:border-[#12C38C]"
+                  required
+                />
               </div>
               <div className="mb-4">
-                <label htmlFor="phone" className="block text-gray-700 mb-2">Phone Number:</label>
-                <input name="phone" type="tel" id="phone" className="w-full p-2 border border-gray-300 rounded" />
+                <input
+                  name="phone"
+                  type="tel"
+                  placeholder="Phone Number"
+                  className="w-full p-2 border-b border-gray-300 focus:outline-none focus:border-[#12C38C]"
+                  required
+                />
               </div>
               <div className="mb-4">
-                <label htmlFor="email" className="block text-gray-700 mb-2">Email:</label>
-                <input name="email" type="email" id="email" className="w-full p-2 border border-gray-300 rounded" />
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="Email"
+                  className="w-full p-2 border-b border-gray-300 focus:outline-none focus:border-[#12C38C]"
+                  required
+                />
               </div>
               <div className="mb-6">
-                <label htmlFor="password" className="block text-gray-700 mb-2">Password:</label>
-                <input name="password" type="password" id="password" className="w-full p-2 border border-gray-300 rounded" />
+                <input
+                  name="password"
+                  type="password"
+                  placeholder="Password"
+                  className="w-full p-2 border-b border-gray-300 focus:outline-none focus:border-[#12C38C]"
+                  required
+                />
               </div>
-              <button type="submit" className="w-full text-white py-2 rounded-md transition duration-300" style={{ backgroundColor: '#12C38C' }}>
-                Create Account
+
+              {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-full bg-[#12C38C] text-white py-3 rounded-lg hover:bg-opacity-90 transition-all disabled:opacity-50"
+              >
+                {loading ? "Creating Account..." : "Create Account"}
               </button>
             </form>
-            <div className="mt-6 flex items-center justify-between">
-              <button className="flex items-center text-gray-700">
+
+            <div className="mt-6 flex items-center justify-center space-x-4">
+              <button
+                onClick={handleGoogleLogin}
+                disabled={loading}
+                className="p-2 border rounded-full hover:border-[#12C38C] transition-all"
+              >
                 <Image
                   src="https://res.cloudinary.com/dhrvr4sey/image/upload/v1726862669/google_oag3xu.png"
                   alt="Google logo"
-                  width={20}
-                  height={20}
+                  width={24}
+                  height={24}
                 />
-                <span className="ml-2">Sign up with Google</span>
-              </button>
-              <button className="flex items-center text-gray-700">
-                <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
-                </svg>
-                Log in
               </button>
             </div>
+
+            <p className="text-center mt-6 text-black">
+              Already have an account?{" "}
+              <button
+                onClick={() => router.push("/login")}
+                className="text-[#12C38C] hover:underline"
+              >
+                Log in
+              </button>
+            </p>
           </div>
         </div>
       </div>
@@ -95,4 +189,4 @@ const SignUpPage: React.FC = () => {
   );
 };
 
-export default SignUpPage;
+export default SignUpPage;
