@@ -1,6 +1,5 @@
 // app/page.tsx
 "use client";
-
 import React, { useEffect, useState } from "react";
 
 import Home from "./home/page";
@@ -26,13 +25,13 @@ const App = () => {
   }, [route]);
 
   switch (route) {
-    case "/pages/login":
+    case "/login":
       return <LoginPage />;
-    case "/pages/signup":
+    case "/signup":
       return <SignUpPage />;
-    case "/pages/aboutus":
+    case "/aboutus":
       return <AboutUs />;
-    case "/pages/home":
+    case "/home":
       return <Home />;
     default:
       return <Home />;

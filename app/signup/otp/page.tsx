@@ -1,5 +1,5 @@
-// signup/otp/page.tsx
 
+// signup/otp/page.tsx
 
 "use client"
 import { useSignUp } from "@clerk/nextjs";
@@ -158,6 +158,8 @@ export default function PhoneVerification() {
           </div>
         </div>
       </div>
+
     </div>
   );
 }
+
