@@ -74,7 +74,7 @@ const LoginPage: React.FC = () => {
         throw new Error('Failed to process user');
       }
 
-      router.push('/dashboard'); // Replace with your redirect path
+      router.push('/dash'); // Replace with your redirect path
     } catch (err: any) {
       setError(err.message);
     } finally {
