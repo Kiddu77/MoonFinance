@@ -226,7 +226,7 @@ const Header: React.FC = () => {
             </Link>
           </li> */}
           <li>
-            <Link href="/contact-us" className="hover:text-violet-500">
+            <Link href="/home" className="hover:text-violet-500">
               Contact Us
             </Link>
           </li>
