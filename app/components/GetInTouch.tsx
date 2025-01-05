@@ -40,15 +40,15 @@ const GetInTouch: React.FC = () => {
         </div>
         <div className="grid grid-cols-2 gap-4">
           {[
-            { icon: '📞', label: 'Phone Number', value: '+959959759' },
-            { icon: '🏠', label: 'Location', value: '+959959759' },
-            { icon: '✉️', label: 'Email', value: '+959959759' },
-            { icon: '📞', label: 'Phone Number', value: '+959959759' }
+            { icon: '📞', label: 'Phone Number', value: '+91 6353332891' },
+            { icon: '📞', label: 'Phone Number', value: '+91 9867578878' },
+            { icon: '✉️', label: 'Email', value: 'shrey.moonfinance@gmail.com' },
+            { icon: '🏠', label: 'Location', value: 'VIT Vellore' }
           ].map((item, index) => (
             <div key={index} className="flex items-center bg-green-100 rounded-lg p-3">
               <div className="bg-green-400 text-white p-2 rounded-full mr-3">{item.icon}</div>
               <div>
-                <p className="font-semibold">{item.label}</p>
+                <p className="font-semibold text-black">{item.label}</p>
                 <p className="text-sm text-gray-600">{item.value}</p>
               </div>
             </div>
