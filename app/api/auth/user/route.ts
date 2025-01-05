@@ -10,6 +10,7 @@ export async function POST(req: Request) {
 
     // Parse request body
     const { email, name, userUid } = await req.json();
+    console.log(userUid)
     console.log('Request Body:', { email, name, userUid });
 
     // Validate input
