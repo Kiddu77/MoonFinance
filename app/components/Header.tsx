@@ -215,7 +215,7 @@ const Header: React.FC = () => {
               About
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/services" className="hover:text-violet-500">
               Services
             </Link>
@@ -224,7 +224,7 @@ const Header: React.FC = () => {
             <Link href="/blogs" className="hover:text-violet-500">
               Blogs
             </Link>
-          </li>
+          </li> */}
           <li>
             <Link href="/contact-us" className="hover:text-violet-500">
               Contact Us
@@ -271,7 +271,7 @@ const Header: React.FC = () => {
                 About
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="/services" className="hover:text-violet-500">
                 Services
               </Link>
@@ -280,7 +280,7 @@ const Header: React.FC = () => {
               <Link href="/blogs" className="hover:text-violet-500">
                 Blogs
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link href="/contact-us" className="hover:text-violet-500">
                 Contact Us
