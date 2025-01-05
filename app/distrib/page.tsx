@@ -103,7 +103,7 @@ const SearchParamsHandler: React.FC = () => {
         <div className="flex items-center justify-center p-4 bg-white h-1/2 !m-0 !mb-10 md:!mb-0 md:!mt-10 shadow-gray-400 shadow-lg">
           <Image src={circle} alt="" height={20} width={20} />
           <div className="px-4">
-            <p className="text-lg font-semibold text-black">Profile Name</p>
+            <p className="text-lg font-semibold text-black">Mode</p>
             <p className="text-[#959191]">CAGR</p>
           </div>
         </div>
@@ -117,7 +117,7 @@ const SearchParamsHandler: React.FC = () => {
             title="Expected CAGR"
             value={
               <>
-                10<span className="text-[#959191] text-2xl font-bold">.28%</span>
+                23<span className="text-[#959191] text-2xl font-bold">.66%</span>
               </>
             }
             valueClass="text-[#12C38C] font-bold"

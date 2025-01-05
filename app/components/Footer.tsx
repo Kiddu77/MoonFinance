@@ -35,13 +35,13 @@ const Footer: React.FC = () => {
                 About Us
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="/blogs" className="hover:text-gray-400">
-                Blogs
+                
               </Link>
-            </li>
+            </li> */}
             <li>
-              <Link href="/contact" className="hover:text-gray-400">
+              <Link href="/home" className="hover:text-gray-400">
                 Contact
               </Link>
             </li>
@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
       {/* Logo Section */}
       <div className="mt-8 text-center">
         <Image
-          src="/path-to-your-logo.svg"
+          src="assets/Footerlogo.svg"
           alt="MOON FINANCE"
           width={150}
           height={50}
