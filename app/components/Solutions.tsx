@@ -41,7 +41,7 @@ const Solutions = () => {
       {/* Introduction Section */}
       <div className="bg-emerald-600 rounded-lg p-6 md:p-8 text-white mb-8">
         <h2 className="text-2xl md:text-3xl font-bold mb-4">What we do?</h2>
-        <p className="mb-6 text-sm md:text-base">
+        <p className="mb-6 text-sm md:text-base ">
           Welcome to MoonFinance! Our advanced AI begins by asking a few simple
           questions about your investment details and priorities. Moon analyzes
           your investor profile and provides tailored recommendations made for
@@ -80,7 +80,7 @@ const Solutions = () => {
               height={48} // Use desired height
               className="mb-3 object-contain"
             />
-            <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
+            <h3 className="font-semibold text-lg mb-2 text-black">{feature.title}</h3>
             <p className="text-sm text-gray-600">{feature.description}</p>
           </div>
         ))}

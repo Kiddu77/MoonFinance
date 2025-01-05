@@ -40,7 +40,7 @@ const AboutUs: React.FC = () => {
     ];
 
     return (
-        <div className="container mx-auto p-16 bg-white text-black">
+        <div className="mx-auto p-16 bg-white text-black">
             {/* First Paragraph with image to the right */}
             <div className="flex flex-col md:flex-row items-center justify-between mb-8">
                 <div className="md:w-2/3 mb-4 md:mb-0 p-6">
