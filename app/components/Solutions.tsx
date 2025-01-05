@@ -1,34 +1,36 @@
 import React from 'react';
-import { User, Shield, Sliders, Layout, BarChart } from 'lucide-react';
+import Image from 'next/image';
+import img1 from "@/app/assets/img1.jpg"; // Importing image
 
 const Solutions = () => {
   const features = [
     {
-      icon: User,
+      image: img1,
       title: 'Expert-Level Guidance',
       description:
         'Receive investment strategies that rival those of top advisors, tailored to your unique financial goals.',
     },
     {
-      icon: Shield,
+      image: img1,
       title: 'Advanced Security',
       description:
         'Your investments and personal data are protected with state-of-the-art encryption protocols.',
     },
     {
-      icon: Sliders,
-      title: 'Customizable Experience',
+      image: img1,
+      title: 'Multi asset Investments',
       description:
-        'Enjoy a platform that molds to your preferences with flexible investment options.',
+        'Enjoy a platform that molds to your preferences with flexible customization options.',
     },
     {
-      icon: Layout,
-      title: 'User-Friendly Interface',
-      description: 'Navigate our intuitive platform with ease, whether you are a novice or a pro.',
+      image: img1,
+      title: 'Withdraw anytime',
+      description:
+        'Navigate our intuitive platform with ease, whether you’re new to investing or a seasoned pro.',
     },
     {
-      icon: BarChart,
-      title: 'Efficient Management',
+      image: img1,
+      title: 'Cyclic rebalancing',
       description:
         'Our AI-driven insights help you manage your investments, maximizing returns and minimizing risks.',
     },
@@ -47,11 +49,19 @@ const Solutions = () => {
           financial goals. Unlock your financial potential with Moon, your expert
           in crafting customized investment plans.
         </p>
+
+        {/* Hero Illustration */}
         <div className="flex items-center justify-between">
           <div className="w-24 h-24 bg-emerald-500 rounded-full"></div>
           <div className="flex flex-col items-end space-y-2">
             <div className="w-12 h-12 bg-yellow-400 rounded-full"></div>
-            <div className="w-16 h-8 bg-white rounded"></div>
+            <Image
+              src={img1}
+              alt="Illustration of an investor with coins"
+              width={80} // Use desired width
+              height={80} // Use desired height
+              className="object-contain"
+            />
           </div>
         </div>
       </div>
@@ -63,7 +73,13 @@ const Solutions = () => {
             key={index}
             className="flex flex-col items-center text-center p-4 shadow-lg rounded-lg bg-gray-50"
           >
-            <feature.icon className="w-12 h-12 text-emerald-600 mb-3" />
+            <Image
+              src={feature.image}
+              alt={feature.title}
+              width={48} // Use desired width
+              height={48} // Use desired height
+              className="mb-3 object-contain"
+            />
             <h3 className="font-semibold text-lg mb-2">{feature.title}</h3>
             <p className="text-sm text-gray-600">{feature.description}</p>
           </div>
