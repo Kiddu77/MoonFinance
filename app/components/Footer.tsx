@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
       {/* Logo Section */}
       <div className="mt-8 text-center">
         <Image
-          src="@/app/assets/Footerlogo.svg"
+          src="/assets/Footerlogo.svg"
           alt="MOON FINANCE"
           width={150}
           height={50}
