@@ -17,7 +17,7 @@ const Home: React.FC = () => {
             investment <span className="text-green-700">advisor</span>
           </h1>
           <button
-            onClick={() => router.push("/quiz")}
+            onClick={() => router.push("/signup")}
             className="bg-[#00D54B] hover:bg-[#00C044] text-black font-bold px-6 py-3 rounded-full text-lg flex items-center justify-center mx-auto lg:mx-0 transition duration-300"
           >
             Start Investing
