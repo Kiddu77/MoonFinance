@@ -42,7 +42,7 @@ const SignUpPage: React.FC = () => {
           setUser(user as IUser); // Assuming `signup` returns user details
 
           // Redirect to homepage
-          router.push("https://www.notion.so/172ab12bf7f4803bbe61facb5f4e6e6b?pvs=106");
+          router.push("/home");
         }
       } catch (err: any) {
         setError(err.message || "Failed to create account. Please try again.");
@@ -81,7 +81,7 @@ const SignUpPage: React.FC = () => {
 
       const data = await response.json();
       setUser(data.user as IUser); // Update the AuthContext with the user
-      router.push("https://www.notion.so/172ab12bf7f4803bbe61facb5f4e6e6b?pvs=106"); // Redirect to homepage
+      router.push("/home"); // Redirect to homepage
     } catch (err: any) {
       console.error("Error during Google login:", err);
       setError("Google login failed. Please try again.");
