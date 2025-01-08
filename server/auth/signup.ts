@@ -14,6 +14,7 @@ interface SignupData {
 export async function signup(data: SignupData) {
   console.log(data);
   const { username, email, password, phone } = data;
+  const name = username;
 
   try {
     await ConnectToDB();
@@ -34,13 +35,13 @@ export async function signup(data: SignupData) {
     // }
     const userId = generateUUID();
     const newUser = new Users({
-      username,
+      name,
       email,
       phone,
       password: hashedPassword,
       userUid: userId,
     });
-
+  
     await newUser.save();
     const serializedUser = newUser.toObject();
 
