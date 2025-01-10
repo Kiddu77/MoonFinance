@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Instagram, Linkedin, Twitter } from 'lucide-react';
+import MOON from "../assets/MOON FINANCE.png";
 
 const Footer: React.FC = () => {
   return (
@@ -52,7 +53,7 @@ const Footer: React.FC = () => {
       {/* Logo Section */}
       <div className="mt-8 text-center">
         <Image
-          src="/path-to-your-logo.svg"
+          src={MOON}
           alt="MOON FINANCE"
           width={150}
           height={50}
