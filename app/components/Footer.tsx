@@ -10,10 +10,10 @@ const Footer: React.FC = () => {
       <div className="container mx-auto flex flex-col md:flex-row justify-between items-center space-y-8 md:space-y-0">
         {/* Social Media Links */}
         <div className="flex justify-center md:justify-start space-x-4">
-          <Link href="https://www.instagram.com" className="hover:text-gray-400">
+          <Link href="https://www.instagram.com/moonfinance.in" className="hover:text-gray-400">
             <Instagram size={24} />
           </Link>
-          <Link href="https://www.linkedin.com" className="hover:text-gray-400">
+          <Link href="https://www.linkedin.com/company/moon-finance-s/" className="hover:text-gray-400">
             <Linkedin size={24} />
           </Link>
           <Link href="https://www.twitter.com" className="hover:text-gray-400">
@@ -36,13 +36,13 @@ const Footer: React.FC = () => {
                 About Us
               </Link>
             </li>
-            <li>
+            {/* <li>
               <Link href="/blogs" className="hover:text-gray-400">
-                Blogs
+                
               </Link>
-            </li>
+            </li> */}
             <li>
-              <Link href="/contact" className="hover:text-gray-400">
+              <Link href="/home" className="hover:text-gray-400">
                 Contact
               </Link>
             </li>
@@ -53,6 +53,7 @@ const Footer: React.FC = () => {
       {/* Logo Section */}
       <div className="mt-8 text-center">
         <Image
+
           src={MOON}
           alt="MOON FINANCE"
           width={150}

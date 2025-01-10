@@ -4,43 +4,30 @@ import img1 from "@/app/assets/img1.jpg";
 import img2 from "@/app/assets/img2.jpg";
 import img3 from "@/app/assets/img3.jpg";
 import Card from "../components/Card";
-import img6 from '@/app/assets/img6.jpg'
+import shrey from '@/app/assets/shrey.svg'
+import soumil from '@/app/assets/soumil.svg'
 
 const AboutUs: React.FC = () => {
     const teamMembers = [
         {
-            name: 'John Doe',
-            job: 'Software Engineer',
-            imageSrc: img6,
-            linkedin: 'https://www.linkedin.com/in/johndoe',
-            instagram: 'https://www.instagram.com/johndoe'
+            name: 'Shrey Baldev',
+            job: 'CEO and Co Founder',
+            imageSrc: shrey,
+            linkedin: 'https://www.linkedin.com/in/shreybaldev/',
+            instagram: 'https://x.com/ShreyBaldev'
         },
         {
-            name: 'Jane Smith',
-            job: 'Product Manager',
-            imageSrc: img6,
-            linkedin: 'https://www.linkedin.com/in/janesmith',
-            instagram: 'https://www.instagram.com/janesmith'
-        },
-        {
-            name: 'Jane Smith',
-            job: 'Product Manager',
-            imageSrc: img6,
-            linkedin: 'https://www.linkedin.com/in/janesmith',
-            instagram: 'https://www.instagram.com/janesmith'
-        },
-        {
-            name: 'Jane Smith',
-            job: 'Product Manager',
-            imageSrc: img6,
-            linkedin: 'https://www.linkedin.com/in/janesmith',
-            instagram: 'https://www.instagram.com/janesmith'
+            name: 'Soumil Binhani',
+            job: 'CTO and Co Founder',
+            imageSrc: soumil,
+            linkedin: 'https://www.linkedin.com/in/soumil-binhani-6528b5270/',
+            instagram: 'https://github.com/SoumilB7'
         },
         // Add more team members as needed
     ];
 
     return (
-        <div className="container mx-auto p-16 bg-white text-black">
+        <div className="mx-auto p-16 bg-white text-black">
             {/* First Paragraph with image to the right */}
             <div className="flex flex-col md:flex-row items-center justify-between mb-8">
                 <div className="md:w-2/3 mb-4 md:mb-0 p-6">

@@ -11,7 +11,7 @@ interface LoginData{
 export async function login (data: LoginData){
 
     try {
-        // console.log(data);
+        //console.log(data);
         const {email,password}=data;
         await ConnectToDB();
 
@@ -23,7 +23,7 @@ export async function login (data: LoginData){
     
         // Find user by email
         const user = await Users.findOne({ email });
-    
+        console.log(user)
         // If user not found or password doesn't match, return error
         if (!user || !user.password || !bcrypt.compare(password, user.password)) {
           throw new Error("Invalid credentials");
