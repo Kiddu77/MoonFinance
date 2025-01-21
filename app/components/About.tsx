@@ -21,7 +21,7 @@ const AboutUs: React.FC = () => {
             job: 'CTO and Co Founder',
             imageSrc: soumil,
             linkedin: 'https://www.linkedin.com/in/soumil-binhani-6528b5270/',
-            instagram: 'https://github.com/SoumilB7'
+            instagram: 'https://x.com/kiddu7704'
         },
         // Add more team members as needed
     ];
