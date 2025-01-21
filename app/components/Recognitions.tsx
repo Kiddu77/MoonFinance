@@ -13,7 +13,7 @@ const Recognitions: React.FC = () => {
   const recognitions: RecognitionItem[] = [
     { name: 'VIT', logo: <Image src={image32} alt="VIT Logo" width={128} height={128} /> },
     { name: 'Microsoft for Startups', logo: <Image src={image30} alt="Microsoft for Startups Logo" width={128} height={128} /> },
-    { name: 'NSRCEL', logo: <Image src={NSRCEL} alt="NSRCEL Logo" width={128} height={128} /> },
+    { name: 'IIM Bangalore', logo: <Image src={NSRCEL} alt="NSRCEL Logo" width={128} height={128} /> },
   ];
 
   return (
