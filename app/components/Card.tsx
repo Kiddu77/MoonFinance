@@ -47,7 +47,7 @@ const Card: React.FC<CardProps> = ({ name, job, imageSrc, linkedin, instagram })
             {/* <FaInstagram size={24} /> */}
             <Image
               src={img5}
-              alt="Instagram"
+              alt="Twitter"
               width={24}
               height={24}
               className="fill-current text-blue-500"
